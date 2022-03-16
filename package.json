@@ -1,0 +1,22 @@
+{
+  "name": "orah",
+  "version": "1.0.0",
+  "description": "school project",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(\"hi\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mq20050522/orah.git"
+  },
+  "keywords": [
+    "orah"
+  ],
+  "author": "Ming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mq20050522/orah/issues"
+  },
+  "homepage": "https://github.com/mq20050522/orah#readme"
+}
