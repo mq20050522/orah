@@ -1,4 +1,16 @@
+from ctypes import string_at
 from bs4 import BeautifulSoup
+import re
+from tqdm import tqdm
+import json
+
+class console:
+    def log(string): print('[LOG]',end=" "); print(string)
+    def info(string): print('[INFO]',end=" "); print(string)
+    def debug(string): print('[DEBUG]',end=" "); print(string)
+    def error(string): print('[ERROR]',end=" "); print(string)
+
+# console.log('hi')
 
 def getContents():
     file = open("St. Anne's-Belfield School - Student Portal.html","r",encoding='utf-8')
@@ -7,17 +19,46 @@ def getContents():
     soup = BeautifulSoup(page, 'html.parser')
     return soup
 
+contents = getContents()
+
 def getNames():
-    divs = getContents().findAll('div', attrs={'class': 'directory-Entry_Title'})
+    console.log("Generating names...")
+    divs = contents.findAll('div', attrs={'class': 'directory-Entry_Title'})
     names = []
     for i in divs:
         names.append(i.contents[0].strip())
-    print(names)
+    # print(names)
     return names
 
+def getGrade():
+    console.log("Generating grades...")
+    divs = contents.findAll('div', attrs={'class': 'directory-Entry_Tag'})
+    grades = []
+    for i in divs:
+        grades.append(i.contents[0].strip())
+    return grades
+
+def getProfile():
+    console.log("Generating Profile Pictures...")
+    divs = contents.findAll('div', attrs={'class', 'directory-Entry_PersonPhoto--square'})
+    urls = []
+    for i in divs:
+        # print(re.search(r'url\("(.+)"\)', i['style']).group(1))
+        urls.append(i['style'][22:-2])
+    # console.debug(urls[0])
+    return urls
+
 def getAllContents():
-    names = []
-    pfp = []
+    console.log('Generating Json File...')
+    data = {}
+    data['names'] = getNames()
+    data['grades'] = getGrade()
+    data['pfp'] = getProfile()
+    return data
 
 if __name__ == '__main__':
-    getNames()
+    contents = getAllContents()
+    console.log("Writing to file...")
+    with open("data.json",'w+') as f:
+        json.dump(contents, f)
+    
