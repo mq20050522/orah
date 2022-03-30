@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>Directions</title>
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-family: 微软雅黑, Sofia;
+	background-color:  rgb(120,49,65);
+}
+#headers {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	top: 1px;
+	transition: top 0.5s linear;
+}
+
+#headers .header_left {
+	float: left;
+	margin-left: 20px;
+	width: 300px;
+}
+
+#headers span {
+	color: white;
+	font-size: 20px;
+	line-height: 78px;
+	float: right;
+}
+
+body {
+	margin: 0 auto;
+}
+
+p.theTitle{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	margin: auto;
+	margin: 30px 0px;
+}
+
+#searchBar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: 4px solid rgb(120,49,65);
+  background-color: white;
+  padding: 20px; 
+  width: 550px;
+  height: 20px;  
+  transform: scale(1.2); 
+}
+.searchButton{
+  margin-left: 20%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 11px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 30px 0px;
+  transition-duration: 0.4s;
+}
+
+.button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid white;
+}
+
+.button:hover {
+  background-color: #525252;
+  color: white;
+  border: 2px solid black;
+  
+}
+#head{
+	padding:8%;
+}
+
+#showing{
+	margin: 10%;
+}
+
+.display{
+
+	width: 20%;
+	height: 15%;
+	
+}
+
+.loader{
+		    --size: 32px;
+		    --duration: 800ms;
+		    width: 96px;
+		    height: 64px;
+		    margin: 50px auto;
+		    transform-style: preserve-3d;
+		    transform-origin: 50% 50%;
+		    position: relative;
+		    display: none;
+		}
+		.loader .box{
+		    width:  32px;
+		    height: 32px;
+		    transform-style: preserve-3d;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+		.loader .box:nth-child(1){
+		    transform: translate(100%, 0);
+		    animation: box1 800ms linear infinite;
+		}
+		.loader .box:nth-child(2){
+		    transform: translate(0, 100%);
+		    animation: box2 800ms linear infinite;
+		}
+		.loader .box:nth-child(3){
+		    transform: translate(100%, 100%);
+		    animation: box3 800ms linear infinite;
+		}
+		.loader .box:nth-child(4){
+		    transform: translate(200%, 0);
+		    animation: box4 800ms linear infinite;
+		}
+		.loader .box > div{
+		    background:#ccc;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: auto;
+		    right: auto;
+		    bottom: auto;
+		    left: auto;
+		}
+
+		@keyframes box1{
+		    0%, 50%{ transform: translate(100%, 0); }
+		    100%{ transform: translate(200%, 0); }
+		}
+		@keyframes box2{
+		    0%{ transform: translate(0, 100%); }
+		    50%{ transform: translate(0, 0); }
+		    100%{ transform: translate(100%, 0); }
+		}
+		@keyframes box3{
+		    0%, 50%{ transform: translate(100%, 100%); }
+		    100%{ transform: translate(0, 100%); }
+		}
+		@keyframes box4{
+		    0%{ transform: translate(200%, 0); }
+		    50%{ transform: translate(200%, 100%); }
+		    100%{ transform: translate(100%, 100%); }
+		}
+		
+
+.subtitle{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#img{
+	position:relative;
+	float:left;
+    border-radius: 3px;
+    height: 150px;
+    margin-right: 40.75rem;
+    width: 150px;
+    flex-basis: 40%
+}
+.image{
+margin-right: 25.75rem;
+width: 150px;
+height:150px;
+
+}
+.studentbracket{
+	background-color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border: 4px solid #525252;
+	display: flex;
+    align-items: center;
+    justify-content: center
+}
+.text {
+	background-color: red;
+        font-size: 20px;
+        padding-right: 10%;
+      }
+.stname{
+  background-color: white;
+  padding: 20px; 
+  width: 157px;
+  height: -10px;  
+  font-size: 20px;
+} 
+#grade{	
+  border-radius: 25px;
+  background: red;
+  padding: 20px; 
+  width: 157px;
+  height: -10px; 
+}
+
+.note{
+	background-color: black;
+}
+
+.btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  margin:10px;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 20%;
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; 
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+
+input{
+background-color:black;
+  width: 60%;
+  height:10%;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+ 	<div id = "head" align="center">
+			<div><p class= "theTitle"  style="color:white;" >Who are you looking for?</p><div>
+	 </div>
+			
+	<div id="boxForSearch">
+
+		
+		<div id = "seachbox">
+			<input type="search" id="searchBar" name="search" placeholder="Search student by name">
+  			<button type="submit" class = "searchButton button" form="nameform" value="Submit">Search</button>
+		</div>
+		
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+ 	</div>
+ 	   <!--  <div class="loader">
+                      <div class="box">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                      </div>
+                      <div class="box">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                      </div>
+                      <div class="box">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                      </div>
+                      <div class="box">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                      </div>
+                    </div>
+                    
+   		 </div>      -->
+     </div>  
+     
+<!--     这里应该是个拼接的玩意 图片+名字+年级+ button add notes -->
+ <div class="studentbracket">
+      <div class="image">
+        <img alt="" src="./logo.png" id="img">
+      </div>
+      <div class="text">
+        <h1>STUDENT NAME</h1>
+      </div>
+    </div>
+			<!-- <div class = "studentbracket">
+				<img alt="" src="./logo.png" id="img" style="display: inline">
+    			<div class ="stname" style="display: inline">Student NAME</div>
+    			<div style="display: inline">c</div>
+				<p class="inline" id = "grade">grade</p>
+				<button id="add">Add note</button>
+			</div> -->
+     
+    <!--  <div class="note">
+			<div class="btn-group">
+			  <button>General</button>
+			  <button>Discipline</button>
+			  <button>Medical</button>
+			  <button>Academic</button>
+			</div>
+	 </div>
+	 
+<form id="recordnote">
+  <label for="text">Start writing note</label>
+  <input type="text" id="text" name="text">
+</form>
+      -->
+    <script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript">
+
+$("#btn").click(function(){
+	$(".loader").fadeIn();
+	
+			})
+
+</script>
+</body>
+</html>
