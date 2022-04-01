@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 from tqdm import tqdm
 import json
+import pandas as pd
 
 class console:
     def log(string): print('[LOG]',end=" "); print(string)
@@ -56,9 +57,20 @@ def getAllContents():
     data['pfp'] = getProfile()
     return data
 
-if __name__ == '__main__':
+def exportJSON():
     contents = getAllContents()
     console.log("Writing to file...")
     with open("data.json",'w+') as f:
         json.dump(contents, f)
-    
+
+def exportCSV():
+    contents = getAllContents()
+    console.log("Writing to file...")
+    df = pd.DataFrame(contents)
+    # with open("data.csv", 'w+') as f:
+    #     df.to_csv(f)
+    df.to_csv('data.csv')
+
+if __name__ == '__main__':
+    # exportJSON()
+    exportCSV()
