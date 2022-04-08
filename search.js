@@ -15,5 +15,6 @@ function search(keywords, listOStudents){
     }
     return(returnValue)
 }
-console.log(search("min", listOStudents))
-console.log(search("osh", listOStudents))
+
+// console.log(search("min", listOStudents))
+// console.log(search("osh", listOStudents))
