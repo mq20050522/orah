@@ -11,7 +11,6 @@
 * {
 	padding: 0;
 	margin: 0;
-	font-size: 14px;
 	font-family: 微软雅黑, Sofia;
 	background-color:  rgb(120,49,65);
 }
@@ -172,20 +171,14 @@ p.theTitle{
 }
 
 #img{
-	position:relative;
-	float:left;
-    border-radius: 3px;
+	background-color: white;
+	position: relative;
+	float: left;
     height: 150px;
-    margin-right: 40.75rem;
     width: 150px;
-    flex-basis: 40%
+    padding-right:45px;
 }
-.image{
-margin-right: 25.75rem;
-width: 150px;
-height:150px;
 
-}
 .studentbracket{
 	background-color: white;
 	margin-left: 25%;
@@ -197,31 +190,31 @@ height:150px;
     align-items: center;
     justify-content: center
 }
-.text {
-	background-color: red;
-        font-size: 20px;
-        padding-right: 10%;
-      }
-.stname{
-  background-color: white;
-  padding: 20px; 
-  width: 157px;
-  height: -10px;  
-  font-size: 20px;
-} 
-#grade{	
-  border-radius: 25px;
-  background: red;
-  padding: 20px; 
-  width: 157px;
-  height: -10px; 
+
+.stname {
+		background: white;
+        font-size: 10px;
+        padding-right: 20%;
+        padding-bottom: 20px;
+     	}
+     	
+h1{
+	background-color: white;	
+	padding-top: 10px;
 }
+
+h2{
+	background-color: rgb(151,183,198);
+	padding: 10px;
+    border-radius: 25px;
+}
+
 
 .note{
 	background-color: black;
 }
 
-.btn-group button {
+.inf_re_note button {
   background-color: #04AA6D; /* Green background */
   border: 1px solid green; /* Green border */
   color: white; /* White text */
@@ -232,12 +225,12 @@ height:150px;
   display: block; /* Make the buttons appear below each other */
 }
 
-.btn-group button:not(:last-child) {
+.inf_re_note button:not(:last-child) {
   border-bottom: none; 
 }
 
-/* Add a background color on hover */
-.btn-group button:hover {
+
+.inf_re_note button:hover {
   background-color: #3e8e41;
 }
 
@@ -245,6 +238,7 @@ input{
 background-color:black;
   width: 60%;
   height:10%;
+
 }
 
 
@@ -307,19 +301,22 @@ background-color:black;
       <div class="image">
         <img alt="" src="./logo.png" id="img">
       </div>
-      <div class="text">
+      <div class="stname">
         <h1>STUDENT NAME</h1>
+			<br>
+			<br>
+        <h2>GRADE 10</h2>
       </div>
+      <div class="inf_re_note">
+		  <button>More Info</button>
+		  <button>Record</button>
+		  <button>Add Note</button>
+	  </div>
+      
     </div>
-			<!-- <div class = "studentbracket">
-				<img alt="" src="./logo.png" id="img" style="display: inline">
-    			<div class ="stname" style="display: inline">Student NAME</div>
-    			<div style="display: inline">c</div>
-				<p class="inline" id = "grade">grade</p>
-				<button id="add">Add note</button>
-			</div> -->
+			
      
-    <!--  <div class="note">
+ <!-- <div class="note">
 			<div class="btn-group">
 			  <button>General</button>
 			  <button>Discipline</button>
@@ -331,8 +328,8 @@ background-color:black;
 <form id="recordnote">
   <label for="text">Start writing note</label>
   <input type="text" id="text" name="text">
-</form>
-      -->
+</form> -->
+
     <script type="text/javascript" src="./jquery.min.js"></script>
 	<script type="text/javascript">
 
