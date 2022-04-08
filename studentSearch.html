@@ -194,7 +194,7 @@ p.theTitle{
 .stname {
 		background: white;
         font-size: 10px;
-        padding-right: 20%;
+        padding-right: 15%;
         padding-bottom: 20px;
      	}
      	
@@ -213,25 +213,39 @@ h2{
 .note{
 	background-color: black;
 }
-
+.inf_re_note{
+background-color: white;
+}
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
 .inf_re_note button {
-  background-color: #04AA6D; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
+/*   background-color: #04AA6D; 
+  border: 1px solid green;  */
+  color: white; 
   margin:10px;
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  width: 20%;
-  display: block; /* Make the buttons appear below each other */
+  margin-right:10%;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  width: 120%;
+  display: block; 
+  border-radius: 2px;
+  font-size: 16px;
+}
+#info{
+background-color: rgb(54,57,79);
 }
 
-.inf_re_note button:not(:last-child) {
-  border-bottom: none; 
+#info:hover {
+  background-color:rgb(34,37,59);
 }
 
-
-.inf_re_note button:hover {
-  background-color: #3e8e41;
+#rec:hover {
+  background-color:rgb(53,32,32);
+}
+#add:hover{
+  background-color:rgb(53,32,32);
+ 
 }
 
 input{
@@ -308,9 +322,9 @@ background-color:black;
         <h2>GRADE 10</h2>
       </div>
       <div class="inf_re_note">
-		  <button>More Info</button>
-		  <button>Record</button>
-		  <button>Add Note</button>
+		  <button id = "info">More Info</button>
+		  <button id = "rec">Record</button>
+		  <button id = "add">Add Note</button>
 	  </div>
       
     </div>
