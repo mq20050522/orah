@@ -7,12 +7,12 @@ const port = 3000;
 const server = require('http').createServer(app);
 
 app.use(express.static(__dirname + "/public"));
-app.set('views', __dirname + "/views");
+app.set('views', __dirname + "/public");
 // app.set('view engine', 'mustache');
 // app.engine('mustache', mustache());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/anneslogin.html')
+    res.sendFile(__dirname + '/public/anneslogin.html')
 })
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
