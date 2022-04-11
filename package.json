@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/mq20050522/orah/issues"
   },
-  "homepage": "https://github.com/mq20050522/orah#readme"
+  "homepage": "https://github.com/mq20050522/orah#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "http": "0.0.1-security"
+  }
 }
