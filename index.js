@@ -19,11 +19,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', async (req, res) => {
-    res.send('register');
+    let foundUser = users.find((data) => req.body.email === data.email)
 });
 
 app.post('/login', async (req, res) => {
-    res.send('login');
+    
 });
 
 server.listen(port, hostname, () => {
