@@ -18,13 +18,15 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/anneslogin.html')
 });
 
-app.post('/register', async (req, res) => {
-    let foundUser = users.find((data) => req.body.email === data.email)
-});
+// app.post('/register', async (req, res) => {
+//     let foundUser = users.find((data) => req.body.email === data.email);
+// });
 
-app.post('/login', async (req, res) => {
+// app.post('/login', async (req, res) => {
     
-});
+// });
+
+
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
