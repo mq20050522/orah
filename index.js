@@ -11,22 +11,20 @@ const users = require('./database/data').userDB
 
 app.use(express.static(__dirname + "/public"));
 app.set('views', __dirname + "/public");
-// app.set('view engine', 'mustache');
-// app.engine('mustache', mustache());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/anneslogin.html')
+    res.sendFile(__dirname + '/public/studentSearch.html');
 });
 
-// app.post('/register', async (req, res) => {
-//     let foundUser = users.find((data) => req.body.email === data.email);
-// });
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/anneslogin.html');
+})
 
-// app.post('/login', async (req, res) => {
-    
-// });
-
-
+app.post('/login', (req, res) => {
+    let email = req.body.email;
+    let password = req.body.password;
+    res.send(`Username: ${username} Password: ${password}`)
+})
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
