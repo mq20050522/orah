@@ -14,6 +14,7 @@ app.set('views', __dirname + "/public");
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/studentSearch.html');
+    // res.send("<h1>hi<h1>");
 });
 
 app.get('/login', (req, res) => {
