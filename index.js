@@ -7,8 +7,6 @@ const hostname = '127.0.0.1';
 const port = 3000;
 const server = require('http').createServer(app);
 
-const users = require('./database/data').userDB
-
 app.use(express.static(__dirname + "/public"));
 app.set('views', __dirname + "/public");
 
