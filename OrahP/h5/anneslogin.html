@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>LOGIN</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	
+* {
+
+}
+		.form {
+		  position: relative;
+		  background: #FFFFFF;
+		  max-width: 360px;
+		  margin: 0 auto 100px;
+		  padding: 45px;
+		  text-align: center;
+		  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		}
+		.form input {
+		  font-family: "Roboto", sans-serif;
+		  outline: 0;
+		  background: #f2f2f2;
+		  width: 100%;
+		  border: 0;
+		  margin: 0 0 15px;
+		  padding: 15px;
+		  box-sizing: border-box;
+		  font-size: 14px;
+		}
+		.form button {
+		  font-family: "Microsoft YaHei","Roboto", sans-serif;
+		  text-transform: uppercase;
+		  outline: 0;
+		  background:  rgb(120,49,65);
+		  width: 100%;
+		  border: 0;
+		  padding: 15px;
+		  color: #FFFFFF;
+		  font-size: 14px;
+		  -webkit-transition: all 0.3 ease;
+		  transition: all 0.3 ease;
+		  cursor: pointer;
+		}
+	
+		body {
+		  background-color: rgb(120,49,65);
+		}
+		
+		.img {
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			padding-top:5%;
+			padding-bottom: 3%;
+		}
+		#customBtn {
+	  margin-top: 10px; 
+      display: inline-block;
+      background: white;
+      color: #444;
+      width: 100%;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    span.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    span.icon {
+      background: url('https://google-developers.gonglchuangl.net/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+      margin: 0 auto;
+      position: relative;
+      right: 5%;
+    }
+		
+</style>
+</head>
+
+<body>		
+			<img alt="" src="./logo.png" class="img"> 
+ 			
+		  <div id="login_form" class="form">
+		  <h3>LOGIN</h3>
+			<div id="gSignInWrapper">
+	        <!-- <span class="label">Sign in with:</span> -->
+	     <div id="customBtn" class="customGPlusSignIn">
+	      <span class="icon"></span>
+	      <span class="buttonText">Google</span>
+	     </div>
+	     </div>
+		 <!--    <form class="login-form">
+		      <input type="text" placeholder=Email id="emailAccount"/>
+		      <input type="password" placeholder="Password" id="password"/>
+		      <button id="login">Log in</button>
+		      <p class="message">Haven't Register Yet? <a href="./createAcc.html">Create An Account</a></p>
+		    </form>
+		    
+		   <p><a href="./studentSearch.html">Changing/Forgetting password</a></p>
+		  </div> -->
+
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+
+$("#gSignInWrapper").click(function (){
+	   $.post("/app/auth/sendLogin",function(res){
+	   console.log(res);
+	   window.location.href = res;
+	   });
+	 })
+
+	
+</script>
+</body>
+</html>
