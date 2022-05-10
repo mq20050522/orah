@@ -79,9 +79,10 @@ def getAllFilteredContents():
         pfp[i] = 'deleted'
     # console.debug(grades)
     for i in range(len(grades)):
-        if names[i] != 'deleted': data['names'].append(names[i])
-        if grades[i] != 'deleted': data['grades'].append(grades[i])
-        if pfp[i] != 'deleted': data['pfp'].append(pfp[i])
+        if names[i] not in data['names']:
+            if names[i] != 'deleted': data['names'].append(names[i])
+            if grades[i] != 'deleted': data['grades'].append(grades[i])
+            if pfp[i] != 'deleted': data['pfp'].append(pfp[i])
     # console.debug(data['grades'])
     return data
 
